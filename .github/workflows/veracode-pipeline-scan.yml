@@ -80,12 +80,11 @@ jobs:
           veracode_policy_name: ${{ inputs.policy_name }}
           file: ./veracode_artifact_directory/${{ env.veracode_artifact }}
           fail_build: ${{ inputs.break_build_policy_findings }}
-          use_upgraded_version: true
 
       - name: Veracode Pipeline Results
         if: always()
         id: prepare-results
-        uses: Veracode/github-actions-integration-helper@v0.1.2
+        uses: Veracode/github-actions-integration-helper@v0.1.3
         with:
           action: 'preparePipelineResults'
           token: ${{ inputs.token }}
