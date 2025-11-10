@@ -32,7 +32,7 @@ on:
 
 jobs:
   build:
-    runs-on: inputs.build_runs_on
+    runs-on: ${{ inputs.build_runs_on }}
     container:
       image: ${{ inputs.build_packager_image }}
     env:
